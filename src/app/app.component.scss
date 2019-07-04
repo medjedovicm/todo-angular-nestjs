@@ -1,0 +1,88 @@
+// color variables
+$brandPrimary: #3498DB;
+$brandPrimaryDark: #2980B9;
+$brandGray: #ECF0F1;
+
+
+header {
+    width: 100%;
+    height: 80px;
+
+    padding: 0 20px;
+
+    background-color: $brandPrimaryDark;
+
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0 0 12px -2px black;
+}
+
+.task-input {    
+    height: 45px;
+    background-color: $brandPrimary;
+    border: 0;    
+    color: $brandGray;
+
+    &::placeholder {        
+        color: $brandGray;
+    }
+}
+
+.add-todo {
+    position: absolute;
+    height: 45px;
+    width: 85px;
+    right: 20px;
+}
+
+.main {
+    .todos-info {
+        text-align: center;
+
+        margin-top: 30px;
+
+        p {
+            color: #b1a7a3;
+        }
+
+        hr {
+            width: 200px;
+        }
+    }
+
+    .to-do {
+        margin-top: 20px;
+        padding: 0 20px;
+
+        user-select: none;
+        cursor: default;
+
+        .item {
+            cursor: move;
+            width: 100%;
+            height: 50px;
+            padding: 12px 20px;
+            margin: 15px 0;
+
+            justify-content: space-between;
+
+            box-shadow: 1px 1px 9px -5px black;
+            background-color: white;
+            border-radius: 5px;
+
+            .options {
+                i.fa-trash-o {
+                    cursor: pointer;
+                    font-size: 25px;
+                    color: #969696;
+
+                    transition: all 0.1s ease-in-out;
+
+                    &:hover {
+                        color: $brandPrimary;
+                    }
+                }
+            }
+        }
+    }
+}

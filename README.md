@@ -14,6 +14,15 @@
 $ service mongod start
 ```
 
+## Installation
+
+```bash
+$ git clone https://github.com/stix96/todo-angular-nestjs.git
+```
+
+```bash
+$ cd todo-angular-nestjs
+```
 
 ## Server
 

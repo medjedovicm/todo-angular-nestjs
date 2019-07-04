@@ -1,4 +1,5 @@
 export class TodoModel {
-    id: number;
+    id?: number;
     text: string;
+    date: string;
 }

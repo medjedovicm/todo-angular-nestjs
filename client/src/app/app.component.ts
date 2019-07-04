@@ -5,6 +5,8 @@ import { CsvService } from './services/csv.service';
 
 import { TodoModel } from './models/todo.model';
 
+import * as moment from 'moment';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -23,16 +25,10 @@ export class AppComponent {
   }
 
   private addTodo() {
-    var id;
-
-    if (this.todos != undefined || this.todos != null) {
-      id = this.todos.length;
-    } else {
-      id = 1;
-    }
-
     if (this.newTask != "") {
-      this.todos.push({id: id, text: this.newTask});      
+      let date = moment().format();
+
+      this.todos.push({text: this.newTask, date});      
     }    
 
     this.newTask = "";

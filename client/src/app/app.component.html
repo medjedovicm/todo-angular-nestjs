@@ -1,34 +1,38 @@
-<header class="flex-it-center" (keyup.enter)="addTodo()">
-  <input class="form-control task-input" placeholder="Enter an task..." [(ngModel)]="newTask">
-  <button type="button" class="btn btn-light add-todo" (click)="addTodo()">Add</button>
-</header>
-
-<div class="main">
-  <div class="todos-info">    
-    <hr />
-    <p *ngIf="todos.length <= 0"> You don't have any tasks </p>
+<div class="main-container">
+  <div class="center-wrapper">
+      <header class="flex-it-center" (keyup.enter)="addTodo()">
+          <input class="form-control task-input" placeholder="Enter an task..." [(ngModel)]="newTask">
+          <button type="button" class="btn btn-light add-todo" (click)="addTodo()">Add</button>
+        </header>
+        
+        <div class="main">
+          <div class="todos-info">    
+            <hr />
+            <p *ngIf="todos.length <= 0"> You don't have any tasks </p>
+          </div>
+        
+          <div class="to-do">
+            <div 
+            *ngFor="let todo of todos; let i = index" 
+            class="item flex-it-center" 
+            draggable="true"
+            (dragstart)="onDragStart($event, i)"
+            (drop)="onDrop($event, i)"
+            (dragover)="allowDrop($event)"
+            (dragleave)="dragLeave($event)">
+        
+              {{todo.text}}
+        
+              <div class="options">        
+                <i (click)="removeTodo(i)" class="fa fa-trash-o" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+          
+          <div class="todos-info">    
+            <hr />
+            <button (click)="downloadCSV()" *ngIf="todos.length > 0" type="button" class="btn btn-outline-secondary">Download CSV</button>
+          </div>    
+        </div>
   </div>
-
-  <div class="to-do">
-    <div 
-    *ngFor="let todo of todos; let i = index" 
-    class="item flex-it-center" 
-    draggable="true"
-    (dragstart)="onDragStart($event, i)"
-    (drop)="onDrop($event, i)"
-    (dragover)="allowDrop($event)"
-    (dragleave)="dragLeave($event)">
-
-      {{todo.text}}
-
-      <div class="options">        
-        <i (click)="removeTodo(i)" class="fa fa-trash-o" aria-hidden="true"></i>
-      </div>
-    </div>
-  </div>
-  
-  <div class="todos-info">    
-    <hr />
-    <button (click)="downloadCSV()" *ngIf="todos.length > 0" type="button" class="btn btn-outline-secondary">Download CSV</button>
-  </div>    
 </div>

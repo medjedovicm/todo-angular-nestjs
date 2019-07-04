@@ -46,3 +46,7 @@ $ npm start
 ## Browser
 
 Visit [dev server](http://localhost:4200)
+
+## Screenshot
+
+<img draggable="false" src="https://ibb.co/fMFJdZk">

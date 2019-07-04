@@ -49,4 +49,4 @@ Visit [dev server](http://localhost:4200)
 
 ## Screenshot
 
-<img draggable="false" src="https://i.ibb.co/2qhJ3Rv/Screenshot-from-2019-07-04-18-18-20.png">
+<img draggable="false" src="https://i.ibb.co/CM2JYKV/Screenshot-from-2019-07-04-18-20-30.png">
